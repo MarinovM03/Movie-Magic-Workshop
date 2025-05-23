@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/MarinovM03/Movie-Magic-Workshop/issues"
   },
-  "homepage": "https://github.com/MarinovM03/Movie-Magic-Workshop#readme"
+  "homepage": "https://github.com/MarinovM03/Movie-Magic-Workshop#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
