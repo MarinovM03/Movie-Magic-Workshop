@@ -27,7 +27,7 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 
 // Set default view folder
-app.set('views', 'src/views');
+app.set('views', './src/views');
 
 // Config routes
 app.use(homeController);
