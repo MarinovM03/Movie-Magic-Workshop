@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/MarinovM03/Movie-Magic-Workshop#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3"
   }
 }
