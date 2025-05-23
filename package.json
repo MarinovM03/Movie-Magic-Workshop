@@ -1,0 +1,22 @@
+{
+  "name": "movie-magic-workshop",
+  "version": "1.0.0",
+  "description": "Movie Magic Workshop – A multi-page app using Express.js and Handlebars to explore server-side rendering, routing, and templating. Build an interactive movie-themed experience while learning key web development concepts with Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinovM03/Movie-Magic-Workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/MarinovM03/Movie-Magic-Workshop/issues"
+  },
+  "homepage": "https://github.com/MarinovM03/Movie-Magic-Workshop#readme"
+}
