@@ -17,4 +17,12 @@ movieController.post('/create', (req, res) => {
     res.redirect('/');
 });
 
+movieController.get('/:movieId/details', (req, res) => {
+    // Get movie id from params
+    const movieId = req.params.movieId;
+
+    // Redirect
+    res.render('details');
+});
+
 export default movieController;
