@@ -4,7 +4,6 @@
                 <h1>All Movies</h1>
                 <div class="band">
 
-                    <!-- If there are posts for creature in the database display each of them -->
                     {{#each movies}}
                         <div class="flip flip-vertical">
                             <div class="front">
@@ -17,11 +16,11 @@
                                 <a href="#" class="details">Details</a>
                             </div>
                         </div>
+                    {{else}}
+                        <div class="no-posts">
+                            <p class="no-offer">There are no posts yet...</p>
+                        </div>
                     {{/each}}
 
-                    <!-- If there are still no posts in the database display: -->
-                    <!-- <div class="no-posts">
-                        <p class="no-offer">There are no posts yet...</p>
-                    </div> -->
                 </div>
             </section>
