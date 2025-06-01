@@ -13,7 +13,7 @@ const castSchema = new Schema({
     },
     born: {
         type: String,
-        required: true,  // TODO: ADD MESSAGE 
+        required: [true, 'Born place is required!'],
     },      
     imageUrl: {
         type: String,
