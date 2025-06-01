@@ -39,7 +39,7 @@ const movieSchema = new Schema({
     description: {
         type: String,
         required: [true, 'Description is required!'],
-        maxLength: [800, 'Description is too long!'],
+        maxLength: [550, 'Description is too long!'],
     }
 });
 
