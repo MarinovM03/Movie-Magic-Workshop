@@ -21,6 +21,11 @@ app.engine('hbs', handlebars.engine({
         showRating(rating) {
             return '★'.repeat(Math.floor(rating));
         }
+    },
+    // Allow handlebars to use prototype methods and properties of the base mongoose document
+    runtimeOptions: {
+        allowProtoMethodsByDefault: true,
+        allowProtoPropertiesByDefault: true 
     }
 }));
 
