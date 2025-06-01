@@ -1,8 +1,8 @@
-import Movie, { movies } from '../models/Movie.js';
+import Movie from '../models/Movie.js';
 
 export default {
-    getAll(filter = {}) {
-        let result = movies.slice();
+    async getAll(filter = {}) {
+        let result = await Movie.find({}).lean();        
 
         if (filter.search) {
             result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
