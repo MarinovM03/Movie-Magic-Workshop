@@ -6,7 +6,6 @@ import homeController from './controllers/homeController.js';
 import movieController from './controllers/movieController.js';
 import castController from './controllers/castController.js';
 
-// Init express instance
 const app = express();
 
 // Add static middleware
@@ -23,7 +22,6 @@ app.engine('hbs', handlebars.engine({
             return '★'.repeat(Math.floor(rating));
         }
     },
-    // Allow handlebars to use prototype methods and properties of the base mongoose  document
     runtimeOptions: {
         allowProtoMethodsByDefault: true,
         allowProtoPropertiesByDefault: true 
@@ -54,5 +52,4 @@ app.all('/*url', (req, res) => {
     res.render('404'); 
 });
 
-// Start express web server
 app.listen(5000, () => console.log('Server is listening on http://localhost:5000...'));

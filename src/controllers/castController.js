@@ -10,7 +10,6 @@ castController.get('/create', (req, res) => {
 castController.post('/create', async (req, res) => {
     const castData = req.body;
 
-    // Send to service
     await castService.create(castData);
 
     res.redirect('/');
