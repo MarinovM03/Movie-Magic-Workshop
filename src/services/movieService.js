@@ -25,7 +25,7 @@ export default {
         return movie.save();
     },
     async getOne(movieId) {
-        const movie = await Movie.findById(movieId);
+        const movie = await Movie.findById(movieId).populate('casts');
 
         return movie;
     },
@@ -36,11 +36,4 @@ export default {
 
         return movie.save();
     },
-    async getCasts(movieId) {
-        const movie = await this.getOne(movieId);
-
-        const casts = await Cast.find({ _id: { $in: movie.casts } });
-
-        return casts;
-    }
 }
