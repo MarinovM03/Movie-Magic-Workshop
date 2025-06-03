@@ -14,6 +14,7 @@ const movieSchema = new Schema({
     genre: {
         type: String,
         required: [true, 'Genre is required!'],
+        lowercase: true,
     },
     director: {
         type: String,
