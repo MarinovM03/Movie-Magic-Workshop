@@ -3,7 +3,7 @@ Movie Magic Workshop – A multi-page app using Express.js and Handlebars to exp
 
 
 ## Bonuses
- - [ ] DB Movies Filtering
- - [ ] Extract Routes
+ - [X] DB Movies Filtering
  - [ ] Filter already attach cast
+ - [ ] Extract Routes
  - [ ] Name in movie
