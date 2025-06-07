@@ -8,9 +8,9 @@ userController.get('/register', (req, res) => {
 });
 
 userController.post('/register', async (req, res) => {
-    const userData = req.body;
+    const { email, password, rePassword } = req.body;
     
-    await userService.register(userData);
+    await userService.register({ email, password, rePassword });
 
     res.redirect('login');
 });
@@ -20,10 +20,9 @@ userController.get('/login', (req, res) => {
 });
 
 userController.post('/login', async (req, res) => {
-    const loginData = req.body
+    const { email, password } = req.body
 
-    // Call service login
-    const token = await userService.login(loginData);
+    const token = await userService.login(email, password);
 
     // TODO: Set auth cookie
 
