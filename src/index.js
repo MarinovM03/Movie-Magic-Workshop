@@ -8,10 +8,7 @@ import castController from './controllers/castController.js';
 
 const app = express();
 
-// Add static middleware
 app.use(express.static('./src/public'));
-
-// Add body parser
 app.use(express.urlencoded());
 
 // Add and config view engine
@@ -38,7 +35,6 @@ try {
     console.log(err.message);
 }
 
-// Set default engine
 app.set('view engine', 'hbs');
 
 // Set default view folder
