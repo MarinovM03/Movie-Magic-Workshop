@@ -5,10 +5,7 @@ const homeController = express.Router();
 
 homeController.get('/', async (req, res) => {
     const movies = await movieService.getAll();
-    
-    console.log(req.user);
-    
-
+        
     res.render('home', { movies });
 });
 
