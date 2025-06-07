@@ -3,11 +3,8 @@ import handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 
-import homeController from './controllers/homeController.js';
-import movieController from './controllers/movieController.js';
-import castController from './controllers/castController.js';
-import userController from './controllers/userController.js';
 import { auth } from './middlewares/authMiddleware.js';
+import routes from './routes.js';
 
 const app = express();
 
@@ -51,13 +48,7 @@ app.set('view engine', 'hbs');
 // Set default view folder
 app.set('views', './src/views');
 
-// Config routes
-app.use(homeController);
-app.use('/movies', movieController);
-app.use('/casts', castController);
-app.use('/users', userController);
-app.all('/*url', (req, res) => {
-    res.render('404'); 
-});
+// Add routes
+app.use(routes);
 
 app.listen(5000, () => console.log('Server is listening on http://localhost:5000...'));
