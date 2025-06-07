@@ -4,7 +4,7 @@ const userController = Router();
 
 //TODO: Add actions
 userController.get('/register', (req, res) => {
-    res.render('register'); 
+    res.render('user/register'); 
 });
 
 export default userController;
