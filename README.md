@@ -4,6 +4,7 @@ Movie Magic Workshop – A multi-page app using Express.js and Handlebars to exp
 
 ## Bonuses
  - [ ] Add Mongo atlas DB
+ - [ ] Route guard
  - [x] Extract routes to external routes file
  - [ ] Auto login on register
  - [x] Remove gen salt
