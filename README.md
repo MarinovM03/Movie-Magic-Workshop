@@ -7,6 +7,7 @@ Movie Magic Workshop – A multi-page app using Express.js and Handlebars to exp
  - [ ] Extract routes to external routes file
  - [ ] Auto login on register
  - [ ] Remove gen salt
+ - [ ] Add rePassword validation (first with model validation)
  - [X] DB Movies Filtering
  - [X] Filter already attach cast
  - [ ] Extract Routes
