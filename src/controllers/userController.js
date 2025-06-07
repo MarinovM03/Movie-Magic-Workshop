@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import userService from '../services/userService.js';
+import { isAuth } from '../middlewares/authMiddleware.js';
 
 const userController = Router();
 
@@ -10,9 +11,11 @@ userController.get('/register', (req, res) => {
 userController.post('/register', async (req, res) => {
     const { email, password, rePassword } = req.body;
     
-    await userService.register({ email, password, rePassword });
+    const token = await userService.register({ email, password, rePassword });
 
-    res.redirect('login');
+    res.cookie('auth', token);
+
+    res.redirect('/');
 });
 
 userController.get('/login', (req, res) => {
@@ -29,7 +32,7 @@ userController.post('/login', async (req, res) => {
     res.redirect('/');
 });
 
-userController.get('/logout', (req, res) => {
+userController.get('/logout', isAuth, (req, res) => {
     res.clearCookie('auth');
 
     // TODO: Invalidate token
