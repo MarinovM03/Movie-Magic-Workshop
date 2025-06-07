@@ -7,6 +7,10 @@ import { jwtSecret } from '../config/general.js';
 
 export default {
     register(userData) {
+        if (userData.password !== userData.rePassword) {
+            return new Error('Passwords do not match!');
+        }
+
         return User.create(userData);
     },
     async login(email, password) {
