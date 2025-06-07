@@ -38,4 +38,7 @@ export default {
 
         return movie.save();
     },
+    async delete(movieId) {
+        return Movie.findByIdAndDelete(movieId);
+    }
 };
