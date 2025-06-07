@@ -12,9 +12,9 @@ Movie Magic Workshop – A multi-page app using Express.js and Handlebars to exp
  - [x] DB Movies Filtering
  - [x] Filter already attach cast
  - [x] Show dynamic title
- - [ ] Add Mongo atlas DB
- - [ ] Route guard
+ - [x] Route guard
  - [ ] Auto login on register
+ - [ ] Add Mongo atlas DB
  - [ ] Make JWT async
  - [ ] Add rePassword validation (first with model validation)
  - [ ] Invalidate token
