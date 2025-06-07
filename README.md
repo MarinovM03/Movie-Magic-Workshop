@@ -3,15 +3,15 @@ Movie Magic Workshop – A multi-page app using Express.js and Handlebars to exp
 
 
 ## Bonuses
- - [ ] Add Mongo atlas DB
- - [ ] Route guard
  - [x] Extract routes to external routes file
- - [ ] Auto login on register
  - [x] Remove gen salt
- - [ ] Make JWT async
- - [ ] Add rePassword validation (first with model validation)
  - [x] DB Movies Filtering
  - [x] Filter already attach cast
- - [ ] Extract Routes
- - [ ] Name in movie
+ - [x] Extract Routes
+ - [ ] Add Mongo atlas DB
+ - [ ] Route guard
+ - [ ] Auto login on register
+ - [ ] Make JWT async
+ - [ ] Add rePassword validation (first with model validation)
  - [ ] Invalidate token
+ - [ ] Name in movie
