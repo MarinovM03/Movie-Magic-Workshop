@@ -19,4 +19,16 @@ userController.get('/login', (req, res) => {
     res.render('user/login');
 });
 
+userController.post('/login', async (req, res) => {
+    const loginData = req.body
+
+    // Call service login
+    const token = await userService.login(loginData);
+
+    // TODO: Set auth cookie
+
+    // redirect to home
+    res.redirect('home');
+});
+
 export default userController;
