@@ -1,6 +1,7 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 
 import homeController from './controllers/homeController.js';
 import movieController from './controllers/movieController.js';
@@ -10,6 +11,11 @@ import userController from './controllers/userController.js';
 const app = express();
 
 app.use(express.static('./src/public'));
+
+// Add cookie parser
+app.use(cookieParser());
+
+// Add body parser
 app.use(express.urlencoded());
 
 // Add and config view engine
