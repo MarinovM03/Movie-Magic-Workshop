@@ -12,10 +12,10 @@ export default {
         if (existingUser) {
             throw new Error('User already exists!');
         }
-        
-        // if (userData.password !== userData.rePassword) {
-        //     return new Error('Passwords do not match!');
-        // }
+
+        if (userData.password !== userData.rePassword) {
+            return new Error('Passwords do not match!');
+        }
 
         const user = await User.create(userData);
 
