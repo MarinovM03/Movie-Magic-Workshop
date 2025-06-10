@@ -7,10 +7,15 @@ import { generateAuthToken } from '../utils/authUtils.js';
 export default {
     async register(userData) {
         // TODO: Check if user already exists
+        const existingUser = await User.findOne({ email: userData.email });
 
-        if (userData.password !== userData.rePassword) {
-            return new Error('Passwords do not match!');
+        if (existingUser) {
+            throw new Error('User already exists');
         }
+        
+        // if (userData.password !== userData.rePassword) {
+        //     return new Error('Passwords do not match!');
+        // }
 
         const user = await User.create(userData);
 
