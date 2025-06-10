@@ -10,7 +10,7 @@ export default {
         const existingUser = await User.findOne({ email: userData.email });
 
         if (existingUser) {
-            throw new Error('User already exists');
+            throw new Error('User already exists!');
         }
         
         // if (userData.password !== userData.rePassword) {
