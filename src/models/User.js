@@ -7,6 +7,7 @@ const userSchema = new Schema({
         required: [true, 'User Email is required!'],
         unique: true,
         validate: [/@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/, 'Invalid Email format!'],
+        minLength: [10, 'Email should be at least 10 characters long!'],
     },
     password: {
         type: String,
