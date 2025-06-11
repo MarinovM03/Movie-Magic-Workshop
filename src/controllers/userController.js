@@ -17,7 +17,7 @@ userController.post('/register', async (req, res) => {
         res.cookie('auth', token);
         res.redirect('/');
     } catch (err) {
-        res.render('user/register', { error: err.message });
+        res.render('user/register', { error: err.message, email });
     }
 });
 
