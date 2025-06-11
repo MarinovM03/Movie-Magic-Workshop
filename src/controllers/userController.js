@@ -28,11 +28,15 @@ userController.get('/login', (req, res) => {
 userController.post('/login', async (req, res) => {
     const { email, password } = req.body
 
-    const token = await userService.login(email, password);
+    try {
+        const token = await userService.login(email, password);
 
-    res.cookie('auth', token);
+        res.cookie('auth', token);
 
-    res.redirect('/');
+        res.redirect('/');
+    } catch (err) {
+        res.render('user/login', { error: err.message, email });
+    }
 });
 
 userController.get('/logout', isAuth, (req, res) => {

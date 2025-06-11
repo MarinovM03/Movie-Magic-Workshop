@@ -24,23 +24,18 @@ export default {
         return token;
     },
     async login(email, password) {
-        // Get user from DB
         const user = await User.findOne({email});
 
-        // Check if user exists
         if (!user) {
-            return new Error('No such user found!');
+            throw new Error('No such user found!');
         }
 
-        // Validate password
         const isValid = await bcrypt.compare(password, user.password);
         
-        // Return error if not valid
         if (!isValid) {
-            return new Error('Invalid password!');
+            throw new Error('Invalid password!');
         }
 
-        // If valid generate token
         const token = generateAuthToken(user);
 
         return token;
