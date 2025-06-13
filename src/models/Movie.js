@@ -18,13 +18,13 @@ const movieSchema = new Schema({
             message: (props) => `${props.value} is not a valid category`, 
         }
     },
-    genre: {
+    genre: [{
         type: String,
         required: [true, 'Genre is required!'],
         lowercase: true,
         validate: [validCharactersPattern, 'Only english letters, digits and whitespace are allowed!'],
         minLength: [5, 'Genre should be at least 5 characters long!'],
-    },
+    }],
     director: {
         type: String,
         required: [true, 'Director is required!'],
