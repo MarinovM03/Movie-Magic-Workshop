@@ -16,7 +16,7 @@ Movie Magic Workshop – A multi-page app using Express.js and Handlebars to exp
  - [x] Auto login on register
  - [x] Add rePassword validation (first with model validation)
  - [x] Redirect with error
- - [ ] Add Mongo atlas DB
+ - [x] Add Mongo atlas DB
  - [ ] Make JWT async
  - [ ] Invalidate token
  - [ ] Name in movie
