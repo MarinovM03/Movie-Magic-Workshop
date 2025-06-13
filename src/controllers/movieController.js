@@ -74,7 +74,7 @@ movieController.post('/:movieId/attach', isAuth, async (req, res) => {
 movieController.get('/:movieId/delete', isAuth, async (req, res) => {
     const movieId = req.params.movieId;
 
-    // TODO: Check if owner
+    // TODO: Check if owner;
 
     await movieService.delete(movieId);
 
@@ -91,8 +91,8 @@ movieController.get('/:movieId/edit', isAuth, async (req, res) => {
     const isOwner = movie.owner?.equals(userId);
 
     if (!isOwner) {
-        // TODO: Add error handling
-        return res.status(403).end();
+        // return res.render('/404', { error: 'You don\'t have access to edit this movie' });
+        return res.dataRedirect('/404', { error: 'You don\'t have access to edit this movie' });
     }
     
     // Prepare view data
