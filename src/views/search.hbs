@@ -1,23 +1,25 @@
-            <section id="search">
-                <h1>Search</h1>
-                <form action="/movies/search" method="GET" class="form">
-                    <input type="text" class="search" name="search" placeholder="Title..." value="{{filter.search}}" >
-                    <input type="text" name="genre" class="genre" placeholder="Genre..." value="{{filter.genre}}">
-                    <input type="number" name="year" class="year" placeholder="Year..." value="{{filter.year}}">
-                    <input type="submit" value="search">
-                </form>
-            </section>
+{{setTitle 'Search'}}
 
-            <section id="catalog">
-                <div class="band">
+<section id="search">
+    <h1>Search</h1>
+    <form action="/movies/search" method="GET" class="form">
+        <input type="text" class="search" name="search" placeholder="Title..." value="{{filter.search}}" >
+        <input type="text" name="genre" class="genre" placeholder="Genre..." value="{{filter.genre}}">
+        <input type="number" name="year" class="year" placeholder="Year..." value="{{filter.year}}">
+        <input type="submit" value="search">
+    </form>
+</section>
 
-                    {{#each movies}}
-                        {{>movie}}
-                    {{else}}
-                        <div class="no-posts">
-                            <p class="no-offer">There are no movies matched...</p>
-                        </div>
-                    {{/each}}
+<section id="catalog">
+    <div class="band">
 
-                </div>
-            </section>
+        {{#each movies}}
+            {{>movie}}
+        {{else}}
+            <div class="no-posts">
+                <p class="no-offer">There are no movies matched...</p>
+            </div>
+        {{/each}}
+
+    </div>
+</section>

@@ -8,7 +8,7 @@ import { getErrorMessage } from '../utils/errorUtils.js';
 const movieController = express.Router();
 
 movieController.get('/create', isAuth, (req, res) => {
-    res.render('movie/create', { pageTitle: 'Create Movie' });
+    res.render('movie/create');
 });
 
 movieController.post('/create', isAuth, async (req, res) => {
@@ -40,7 +40,7 @@ movieController.get('/:movieId/details', async (req, res) => {
 
     const isOwner = movie.owner?.equals(userId);    
 
-    res.render('movie/details', { movie, isOwner, pageTitle: 'Details' });
+    res.render('movie/details', { movie, isOwner });
 });
 
 movieController.get('/search', async (req, res) => {
@@ -48,7 +48,7 @@ movieController.get('/search', async (req, res) => {
 
     const movies = await movieService.getAll(filter);
 
-    res.render('search', { movies, filter, pageTitle: 'Search' });
+    res.render('search', { movies, filter });
 });
 
 movieController.get('/:movieId/attach', isAuth, async (req, res) => {
@@ -58,7 +58,7 @@ movieController.get('/:movieId/attach', isAuth, async (req, res) => {
 
     const casts = await castService.getAll({ exclude: movie.casts });
 
-    res.render('movie/attach', { movie, casts, pageTitle: 'Attach' });
+    res.render('movie/attach', { movie, casts });
 });
 
 movieController.post('/:movieId/attach', isAuth, async (req, res) => {
@@ -92,7 +92,7 @@ movieController.get('/:movieId/edit', isAuth, async (req, res) => {
 
     if (!isOwner) {
         // return res.render('/404', { error: 'You don\'t have access to edit this movie' });
-        return res.dataRedirect('/404', { error: 'You don\'t have access to edit this movie' });
+        return res.dataRedirect('/404', { error: 'You don\'t have access to edit this movie', pageTitle: 'Error Page' });
     }
     
     // Prepare view data
@@ -101,7 +101,6 @@ movieController.get('/:movieId/edit', isAuth, async (req, res) => {
     res.render('movie/edit', { 
         movie,
         categoryOptions: categoryOptionsViewData,
-        pageTitle: 'Edit',
     });
 });
 

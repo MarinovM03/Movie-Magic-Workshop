@@ -6,11 +6,11 @@ const homeController = express.Router();
 homeController.get('/', async (req, res) => {
     const movies = await movieService.getAll();
         
-    res.render('home', { movies, pageTitle: 'Home' });
+    res.render('home', { movies });
 });
 
 homeController.get('/about', (req, res) => {
-    res.render('about', { pageTitle: 'About' });
+    res.render('about');
 });
 
 export default homeController;
